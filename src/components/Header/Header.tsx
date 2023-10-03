@@ -165,7 +165,7 @@ function NavItem({
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-gray-500 dark:text-gray-400'
+            ? 'text-indigo-500 dark:text-indigo-400'
             : 'hover:text-indigo-500 dark:hover:text-indigo-400',
         )}
       >
@@ -189,7 +189,7 @@ function BobWattsNavLink({href, children}: { href: string, children: React.React
         className={clsx(
           'font-bold relative block px-2 py-2 transition',
           isActive
-            ? 'text-gray-500 dark:text-gray-400'
+            ? 'text-indigo-500 dark:text-indigo-400'
             : 'hover:text-indigo-500 dark:hover:text-indigo-400',
         )}
       >
@@ -278,7 +278,7 @@ function Avatar({
     >
       <Image
         src={avatarImage}
-        alt=""
+        alt="Picture of Fredrik"
         sizes={large ? '4rem' : '2.25rem'}
         className={clsx(
           'rounded-full bg-gray-100 object-cover dark:bg-gray-800',
