@@ -1,5 +1,4 @@
 import { Container } from "@/components/Container";
-import Link from "next/link";
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from "@/components/Social/SocialIcons";
 import image1 from '@/images/photos/image-1.webp'
 import image2 from '@/images/photos/image-2.webp'
@@ -12,46 +11,13 @@ import { Card } from "@/components/Card/Card";
 import { getArticles } from "../../sanity/utils/article";
 import { ArticleType } from "@/types/Sanity/Article/ArticleType";
 import { getWorkExperiences } from "../../sanity/utils/work";
-import { ImageType, WorkExperiencesType } from "@/types/Sanity/Work/WorkExperinceType";
-import { client } from "../../sanity/lib/client";
-import imageUrlBuilder from "@sanity/image-url";
-
-function SocialLink({
-                        icon: Icon,
-                        ...props
-                    }: React.ComponentPropsWithoutRef<typeof Link> & {
-    icon: React.ComponentType<{ className?: string }>
-}) {
-    return (
-        <Link className="group -m-1 p-1" {...props}>
-            <Icon
-                className="h-6 w-6 fill-gray-500 transition group-hover:fill-gray-600 dark:fill-gray-400 dark:group-hover:fill-gray-300"/>
-        </Link>
-    )
-}
-
-function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-    return (
-        <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-            {...props}
-        >
-            <path
-                d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-                className="fill-gray-100 stroke-gray-400 dark:fill-gray-100/10 dark:stroke-gray-500"
-            />
-            <path
-                d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-                className="stroke-gray-400 dark:stroke-gray-500"
-            />
-        </svg>
-    )
-}
+import { WorkExperiencesType } from "@/types/Sanity/Work/WorkExperinceType";
+import { getEducation } from "../../sanity/utils/education";
+import { EducationType } from "@/types/Sanity/Education/EducationType";
+import { ImageComponent } from "@/components/Image/ImageComponent";
+import { BriefcaseIcon } from "@/components/Icon/BreifcaseIcon";
+import { EducationIcon } from "@/components/Icon/EducationIcon";
+import { SocialLink } from "@/components/Social/SocialLink";
 
 function Photos() {
     let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
@@ -92,22 +58,6 @@ function Article({article}: { article: ArticleType }) {
     )
 }
 
-const builder = imageUrlBuilder(client);
-
-function ImageComponent({name, image}: { name: string, image: ImageType }) {
-    const imageUrl = builder.image(image).url() || "";
-
-    return (
-        <Image
-            src={imageUrl}
-            alt={name}
-            width={200}
-            height={200}
-            className="rounded-full"
-        />
-    )
-}
-
 function Role({role}: { role: WorkExperiencesType }) {
     const endDate = role.endDate ? role.endDate.substring(0, 7) : 'Present'
 
@@ -115,7 +65,7 @@ function Role({role}: { role: WorkExperiencesType }) {
         <li className="flex gap-4">
             <div
                 className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-gray-800/5 ring-1 ring-gray-900/5 dark:border dark:border-gray-700/50 dark:bg-gray-800 dark:ring-0">
-                <ImageComponent name={role.companyName} image={role.image}/>
+                <ImageComponent name={role.companyName} image={role.image} width={200} height={200}/>
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
                 <dt className="sr-only">Company</dt>
@@ -157,9 +107,60 @@ function Resume({resume}: { resume: WorkExperiencesType[] }) {
     )
 }
 
+function EducationRole({role}: { role: EducationType }) {
+    const endDate = role.endDate.substring(0, 7)
+
+    return (
+        <li className="flex gap-4">
+            <div
+                className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-gray-800/5 ring-1 ring-gray-900/5 dark:border dark:border-gray-700/50 dark:bg-gray-800 dark:ring-0">
+                {role.image ?
+                    <ImageComponent name={role.schoolName} image={role.image} width={200} height={200}/> : null}
+            </div>
+            <dl className="flex flex-auto flex-wrap gap-x-2">
+                <dt className="sr-only">School</dt>
+                <dd className="w-full flex-none text-sm font-medium text-gray-900 dark:text-gray-100">
+                    {role.schoolName}
+                </dd>
+                <dt className="sr-only">Grade</dt>
+                <dd className="text-xs text-gray-500 dark:text-gray-400">
+                    {role.grade}
+                </dd>
+                <dt className="sr-only">Date</dt>
+                <dd
+                    className="ml-auto text-xs text-gray-400 dark:text-gray-500"
+                    aria-label={`${role.startDate} until ${endDate}`}
+                >
+                    <time dateTime={role.startDate.substring(0, 7)}>{role.startDate.substring(0, 7)}</time>
+                    {' '}
+                    <span aria-hidden="true">—</span>{' '}
+                    <time dateTime={endDate}>{endDate}</time>
+                </dd>
+            </dl>
+        </li>
+    )
+}
+
+function Education({educations}: { educations: EducationType[] }) {
+    return (
+        <div className="rounded-2xl border border-gray-100 p-6 dark:border-gray-700/40">
+            <h2 className="flex text-sm font-semibold text-gray-900 dark:text-gray-300">
+                <EducationIcon className="h-6 w-6 flex-none"/>
+                <span className="ml-3 pt-0.5">Education</span>
+            </h2>
+            <ol className="mt-6 space-y-4">
+                {educations.map((role, roleIndex) => (
+                    <EducationRole key={roleIndex} role={role}/>
+                ))}
+            </ol>
+        </div>
+    )
+}
+
 export default async function Home() {
     const articles = await getArticles()
     const resume = await getWorkExperiences()
+    const education = await getEducation()
 
     return (
         <>
@@ -206,6 +207,7 @@ export default async function Home() {
                     </div>
                     <div className="space-y-5 lg:pl-16 xl:pl-24">
                         <Resume resume={resume}/>
+                        <Education educations={education}/>
                     </div>
                 </div>
             </Container>
