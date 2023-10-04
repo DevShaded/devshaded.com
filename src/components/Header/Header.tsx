@@ -187,7 +187,7 @@ function BobWattsNavLink({href, children}: { href: string, children: React.React
       <a
         href={href}
         className={clsx(
-          'font-bold relative block px-2 py-2 transition',
+          'font-bold relative block px-1 py-2 transition',
           isActive
             ? 'text-indigo-500 dark:text-indigo-400'
             : 'hover:text-indigo-500 dark:hover:text-indigo-400',
