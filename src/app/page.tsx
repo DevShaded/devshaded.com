@@ -1,23 +1,29 @@
-import { Container } from "@/components/Container";
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from "@/components/Social/SocialIcons";
-import image1 from '@/images/photos/image-1.webp'
-import image2 from '@/images/photos/image-2.webp'
-import image3 from '@/images/photos/image-3.webp'
-import image4 from '@/images/photos/image-4.webp'
-import image5 from '@/images/photos/image-5.webp'
 import { clsx } from "clsx";
 import Image from "next/image";
-import { Card } from "@/components/Card/Card";
+
 import { getArticles } from "../../sanity/utils/article";
-import { ArticleType } from "@/types/Sanity/Article/ArticleType";
 import { getWorkExperiences } from "../../sanity/utils/work";
-import { WorkExperiencesType } from "@/types/Sanity/Work/WorkExperinceType";
 import { getEducation } from "../../sanity/utils/education";
+
+import { ArticleType } from "@/types/Sanity/Article/ArticleType";
+import { WorkExperiencesType } from "@/types/Sanity/Work/WorkExperinceType";
 import { EducationType } from "@/types/Sanity/Education/EducationType";
+
+import { Container } from "@/components/Container";
+import { Card } from "@/components/Card/Card";
 import { ImageComponent } from "@/components/Image/ImageComponent";
 import { BriefcaseIcon } from "@/components/Icon/BreifcaseIcon";
 import { EducationIcon } from "@/components/Icon/EducationIcon";
 import { SocialLink } from "@/components/Social/SocialLink";
+
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from "@/components/Social/SocialIcons";
+
+import image1 from '@/images/photos/image-1.webp';
+import image2 from '@/images/photos/image-2.webp';
+import image3 from '@/images/photos/image-3.webp';
+import image4 from '@/images/photos/image-4.webp';
+import image5 from '@/images/photos/image-5.webp';
+
 
 function Photos() {
     let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
@@ -144,7 +150,7 @@ function EducationRole({role}: { role: EducationType }) {
 function Education({educations}: { educations: EducationType[] }) {
     return (
         <div className="rounded-2xl border border-gray-100 p-6 dark:border-gray-700/40">
-            <h2 className="flex text-sm font-semibold text-gray-900 dark:text-gray-300">
+            <h2 className="flex text-sm font-semibold text-gray-900 dark:text-gray-100">
                 <EducationIcon className="h-6 w-6 flex-none"/>
                 <span className="ml-3 pt-0.5">Education</span>
             </h2>
