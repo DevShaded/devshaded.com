@@ -144,7 +144,7 @@ function EducationRole({role}: { role: EducationType }) {
 function Education({educations}: { educations: EducationType[] }) {
     return (
         <div className="rounded-2xl border border-gray-100 p-6 dark:border-gray-700/40">
-            <h2 className="flex text-sm font-semibold text-gray-900 dark:text-gray-300">
+            <h2 className="flex text-sm font-semibold text-gray-900 dark:text-gray-100">
                 <EducationIcon className="h-6 w-6 flex-none"/>
                 <span className="ml-3 pt-0.5">Education</span>
             </h2>
