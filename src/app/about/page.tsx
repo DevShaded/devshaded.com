@@ -43,9 +43,30 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 export const metadata: Metadata = {
-    title: 'About',
+    title: 'About me',
     description:
-        'I’m Spencer Sharp. I live in New York City, where I design the future.',
+        'The Fullstack Web Developer from Norway, here is the official portfolio for DevShaded',
+    twitter: {
+        card: 'summary',
+        title: 'About me - DevShaded',
+        description: 'The Fullstack Web Developer from Norway, here is the official portfolio for DevShaded',
+        images: '/favicons/devshaded/android-chrome-512x512.png',
+    },
+    openGraph: {
+        type: 'website',
+        locale: 'no_NO',
+        siteName: 'About me - DevShaded',
+        title: 'About me - DevShaded',
+        description: 'The Fullstack Web Developer from Norway, here is the official portfolio for DevShaded',
+        images: [
+            {
+                url: '/favicons/devshaded/android-chrome-512x512.png',
+                width: 180,
+                height: 180,
+                alt: 'DevShaded - Web developer, photographer, and entrepreneur.',
+            },
+        ],
+    }
 }
 
 export default function About() {

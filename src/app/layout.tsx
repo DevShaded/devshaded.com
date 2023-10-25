@@ -21,11 +21,27 @@ export const metadata: Metadata = {
     },
     description:
         'The Fullstack Web Developer from Norway, here is the official portfolio for DevShaded',
-    alternates: {
-        types: {
-            'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-        },
+    twitter: {
+        card: 'summary',
+        title: 'DevShaded - Web developer, photographer, and entrepreneur.',
+        description: 'The Fullstack Web Developer from Norway, here is the official portfolio for DevShaded',
+        images: '/favicons/devshaded/android-chrome-512x512.png',
     },
+    openGraph: {
+        type: 'website',
+        locale: 'no_NO',
+        siteName: 'DevShaded - Web developer, photographer, and entrepreneur.',
+        title: 'DevShaded - Web developer, photographer, and entrepreneur.',
+        description: 'The Fullstack Web Developer from Norway, here is the official portfolio for DevShaded',
+        images: [
+            {
+                url: '/favicons/devshaded/android-chrome-512x512.png',
+                width: 180,
+                height: 180,
+                alt: 'DevShaded - Web developer, photographer, and entrepreneur.',
+            },
+        ],
+    }
 }
 
 export default function RootLayout({
