@@ -5,6 +5,7 @@ import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout/Layout'
 import { Poppins } from "next/font/google";
 import { clsx } from 'clsx'
+import { Analytics } from '@vercel/analytics/react';
 
 const poppins = Poppins({
     weight: ['400', '500', '700'],
@@ -57,6 +58,7 @@ export default function RootLayout({
                 <Layout>{children}</Layout>
             </div>
         </Providers>
+        <Analytics/>
         </body>
         </html>
     )
