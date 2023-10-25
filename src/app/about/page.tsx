@@ -90,7 +90,7 @@ export default function About() {
                     </h1>
                     <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                         <p>
-                            I started with programming in grad school, I learned Scratch at that time. I liked
+                            I started with programming in primary school, I learned Scratch at that time. I liked
                             programming after we did the Scratch classes, so I decided I wanted to learn more. I started
                             learning Python, but It wasn&apos;t really what I wanted to learn. I wanted to learn how to
                             make websites, and so I did.
