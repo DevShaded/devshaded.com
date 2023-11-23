@@ -58,14 +58,14 @@ export default function RootLayout({
         <Layout>{children}</Layout>
       </div>
     </Providers>
-    <Script src="https://www.googletagmanager.com/gtag/js?id=320162364"/>
+    <Script src="https://www.googletagmanager.com/gtag/js?id=G-7KFLKPB9HC"/>
     <Script id="google-analytics">
       {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', '320162364');
+          gtag('config', 'G-7KFLKPB9HC');
         `}
     </Script>
     </body>
