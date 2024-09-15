@@ -177,7 +177,7 @@ export default async function Home() {
                     </h1>
 
                     <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                        My passion is coding, and I'm a full-stack web developer from Norway. When I'm not working, you can find me completely immersed in code, trying out new methods, and keeping up with the newest developments in tech.
+                        My passion is coding, and I&apos;m a full-stack web developer from Norway. When I&apos;m not working, you can find me completely immersed in code, trying out new methods, and keeping up with the newest developments in tech.
                     </p>
                     <div className="mt-6 flex gap-6">
                         <SocialLink
