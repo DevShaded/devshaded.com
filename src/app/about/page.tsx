@@ -98,7 +98,7 @@ export default function About() {
                             My Fortnite Stats Tracker is my best project yet. You can see it on the project page. I am proud of this project and have gained valuable knowledge through the creation of this web application. This project was also developed utilizing Laravel and Vue.js.
                         </p>
                         <p>
-                            I've been using a lot of text and code editors in the past few years. I went from Atom to Brackets a lot, but then I found VSCode, everything changed. Not only that, but I also coded faster and better with this tool because it has good IntelliSense. I discovered an even superior integrated development environment, namely PhpStorm. I was in love with PhpStorm when I first tried it. It helped me a lot when I used Laravel to code.
+                            I&apos;ve been using a lot of text and code editors in the past few years. I went from Atom to Brackets a lot, but then I found VSCode, and everything changed. Not only that, but I also coded faster and better with this tool because it has good IntelliSense. I discovered an even superior integrated development environment, namely PhpStorm. I was in love with PhpStorm when I first tried it. It helped me a lot when I used Laravel to code.
                         </p>
                     </div>
                 </div>
