@@ -85,32 +85,20 @@ export default function About() {
                 </div>
                 <div className="lg:order-first lg:row-span-2">
                     <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                        My name is Fredrik, and I was born and raised in the beautiful country of Norway 🇳🇴. I am 17
-                        years old!
+                        The beautiful country of Norway 🇳🇴 is where I was born and raised. I am {new Date().getFullYear()} years old!
                     </h1>
                     <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                         <p>
-                            I started with programming in primary school, I learned Scratch at that time. I liked
-                            programming after we did the Scratch classes, so I decided I wanted to learn more. I started
-                            learning Python, but It wasn&apos;t really what I wanted to learn. I wanted to learn how to
-                            make websites, and so I did.
+                            I began my programming career in primary school, where I learned Scratch. Not only that, but I liked programming after we did Scratch classes, so I wanted to learn more. I started learning Python, but I didn't want to. I was eager to learn how to build websites, and so I did.
                         </p>
                         <p>
-                            I mainly program with PHP and JavaScript. My main go-to framework for PHP must be Laravel. I
-                            also use Vue.js and Tailwind CSS for my front-end! I also have a little experience with C#,
-                            GoLang, Lua, and Rust.
+                            Also, I mostly use PHP and JavaScript. My primary choice for PHP development is Laravel. Furthermore, I use Vue.js and Tailwind CSS for my front-end. I am also proficient in C#, Golang, Lua, and Rust.
                         </p>
                         <p>
-                            One of my best projects yet have to be my Fortnite Stats Tracker, which you can see on the
-                            project page! I am proud of this project, and I have learned a lot just by making this web
-                            app. This project was also made with Laravel and Vue.js.
+                            My Fortnite Stats Tracker is my best project yet. You can see it on the project page. I am proud of this project and have gained valuable knowledge through the creation of this web application. This project was also developed utilizing Laravel and Vue.js.
                         </p>
                         <p>
-                            I have used a lot of text and code editors in the past few years. I switched a lot from Atom
-                            to Brackets, but when I found VSCode everything changed. I coded much better and faster with
-                            this tool since it has good IntelliSense. I found an even better IDE for my development, and
-                            that was PhpStorm. When I first tried PhpStorm, I fell in love with this tool. It helped me
-                            a lot trough when coded with Laravel.
+                            I've been using a lot of text and code editors in the past few years. I went from Atom to Brackets a lot, but then I found VSCode, everything changed. Not only that, but I also coded faster and better with this tool because it has good IntelliSense. I discovered an even superior integrated development environment, namely PhpStorm. I was in love with PhpStorm when I first tried it. It helped me a lot when I used Laravel to code.
                         </p>
                     </div>
                 </div>
