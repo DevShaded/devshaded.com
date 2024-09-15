@@ -89,7 +89,7 @@ export default function About() {
                     </h1>
                     <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                         <p>
-                            I began my programming career in primary school, where I learned Scratch. Not only that, but I liked programming after we did Scratch classes, so I wanted to learn more. I started learning Python, but I didn't want to. I was eager to learn how to build websites, and so I did.
+                            I began my programming career in primary school, where I learned Scratch. Not only that, but I liked programming after we did Scratch classes, so I wanted to learn more. I started learning Python, but I didn&apos;t want to. I was eager to learn how to build websites, and so I did.
                         </p>
                         <p>
                             Also, I mostly use PHP and JavaScript. My primary choice for PHP development is Laravel. Furthermore, I use Vue.js and Tailwind CSS for my front-end. I am also proficient in C#, Golang, Lua, and Rust.
